@@ -35,11 +35,13 @@
     viz.selectAll('.bar')
        .data(timeline).enter()
            .append('rect')
-           .attr('x', function(d, k){ return k * 10 })
-           .attr('y', 100)
-           .attr('width', 9)
-           .attr('height', function(d){ return  d.length * 10 })
-           .style('fill', '#000');
+           .attr('x', 10)
+           .attr('y', function(d, k){ return k * 10 })
+           .attr('width', function(d){ return  d.length * 1 })
+           .attr('height', 9)
+           .style('fill', 'salmon')
+            .append("svg:title")
+              .text(function(d, i) { return i });
 
   });
 
